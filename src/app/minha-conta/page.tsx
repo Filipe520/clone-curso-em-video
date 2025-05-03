@@ -1,9 +1,23 @@
+import BannerPaginaCima from "../components/BannerPaginaCima";
+import BlocoAcesso from "../components/BlocoAcesso";
+
 export default function MyAccount() {
   return (
-    <div>
-      <h1>Minha conta</h1>
+    <main className="bg-[#F2FAFC] container">
+      <BannerPaginaCima />
 
-      <p>meus cursos</p>
-    </div>
+      <div className="grid [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))] gap-8 mt-4">
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+        <BlocoAcesso />
+      </div>
+    </main>
   );
 }

@@ -1,26 +1,15 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import Img from "../components/layout/img";
 import Link from "next/link";
 
-export default function Cursos() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch("https://filipe520.github.io/Carrossel-de-Cidades/json/db.json")
-      .then((res) => res.json())
-      .then((obj) => {
-        console.log(obj); // Veja o formato dos dados no console
-        setData(obj);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+export default async function Cursos() {
+  const db = await fetch(
+    "https://filipe520.github.io/Carrossel-de-Cidades/json/db.json"
+  );
+  const data = await db.json();
 
   return (
     <section className="text-black bg-white ml-5 mr-5 max-w-7xl">
-      <section className="inforCurso bg-[url(/image/fundoBackground-cursos.jpg)] bg-center bg-current">
+      <section className="inforCurso bg-[url(/image/BannerPaginaCima.jpg)] bg-center bg-current">
         <div className="py-5">
           <h1 className="text-5xl font-bold py-2">Cursos</h1>
         </div>
@@ -51,9 +40,9 @@ export default function Cursos() {
       <section className="cards py-5">
         {/* Exemplo de uso dos dados */}
         {data &&
-          data.courses?.map((json) => (
+          data.courses?.map((json: { title: string; paragraph: string }) => (
             <div
-              key={1}
+              key={data.courses.indexOf(json)}
               className="max-w-sm rounded overflow-hidden shadow-lg bg-neutral-50 w-[350px] mb-4"
             >
               <div className="w-full">

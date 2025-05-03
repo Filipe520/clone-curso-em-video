@@ -9,7 +9,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link href="/">
-          <Img img={"logoWhite.png"} alt="Imagem da logo Curso em Vídeo" />
+          <Img img={"logoBlue.png"} alt="Imagem da logo Curso em Vídeo" />
         </Link>
       </div>
       <nav>

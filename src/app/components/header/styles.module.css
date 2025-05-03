@@ -5,11 +5,11 @@
   align-items: center;
   justify-content: space-between;
 
-  background-color: rgba(0, 0, 0, 0.342);
+  background-color: #f2fafc;
 }
 
 .header .logo {
-  width: 200px;
+  width: clamp(130px, 50vw, 150px);
 }
 
 .header nav ul {
@@ -22,4 +22,11 @@
 
   font-weight: 700;
   font-size: 16px;
+}
+
+.header a {
+  color: rgb(46, 46, 46);
+  font-weight: 600;
+
+  font-size: 0.9em;
 }

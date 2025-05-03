@@ -1,16 +1,31 @@
-import styles from "./styles.module.css"
+import styles from "./styles.module.css";
 
 interface InputProp {
-    name: string, 
-    title: string, 
-    type: string
+  name: string;
+  title: string;
+  type: string;
+  changeFunction: (value: string) => void;
 }
 
-export default function Input({name,title,type}: InputProp){
-    return(
-        <div>
-            <label className={styles.label_input} htmlFor={name}>{title}</label>
-            <input className={styles.input_form} type={type} id={name} name={name} placeholder={title.toLocaleUpperCase()}/>
-        </div>
-    )
+export default function Input({
+  name,
+  title,
+  type,
+  changeFunction,
+}: InputProp) {
+  return (
+    <div>
+      <label className={styles.label_input} htmlFor={name}>
+        {title}
+      </label>
+      <input
+        className={styles.input_form}
+        type={type}
+        id={name}
+        name={name}
+        onChange={(event) => changeFunction(event.target.value)}
+        placeholder={title.toLocaleUpperCase()}
+      />
+    </div>
+  );
 }
